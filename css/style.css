@@ -1,0 +1,503 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+共通要素
+-------------------------------------------*/
+/*最上段のhtmlタグでfont-size 100%とすることでブラウザの種類や状態にあわせて変更するようにmagic*/
+html {
+  font-size: 100%;
+}
+
+/*初期化リセット*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*ul liの黒ポチ無し*/
+ul li {
+  list-style: none;
+}
+
+/*aタグの装飾なし+色変更*/
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*imgのmax-widthを(親要素の)100%にすることでコンテンツ幅にあわせて画像サイズも調整*/
+img {
+  max-width: 100%;
+}
+
+/*コンテンツ全体のフォント、配色*/
+body {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  background-color: #000;
+  font-weight: 300;
+}
+
+/*コンテンツ全体のレイアウト設定*/
+.container {
+  margin: 0 auto;
+  /*ブロック要素中央寄せ*/
+  text-align: center;
+}
+
+/*一部のセクションのレイアウト設定*/
+.wrapper {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+  /*ブロック要素中央寄せ*/
+}
+
+.site-title {
+  font-size: 6.0rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  /*文字間隔*/
+  margin: 100px 0;
+}
+
+.sec-title {
+  border-bottom: solid 1px #fff;
+  /* 下線をテキストと同じ幅にあわせるために設定 */
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  /*文字間隔*/
+  margin-bottom: 45px;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  /*文字間隔*/
+  margin-top: 10px;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+.header {
+  display: flex;
+}
+
+.logo-image {
+  width: 150px;
+  height: 10vh;
+  object-fit: cover;
+  position: fixed;
+  z-index: 40;
+  /*nav-menuより上*/
+}
+
+/*-------------------------------------------
+ナビメニュー nav-menu
+-------------------------------------------*/
+/*通常時*/
+.nav-menu {
+  width: 100%;
+  background-color: #000;
+  color: #f8f8ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  /*デフォルトはY軸-100% & opacity0で透明にして上に隠す*/
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 0.6s;
+  z-index: 30;
+  /*logo-image, hamburgerよりは下だが、access背景よりは上*/
+}
+
+/*open時*/
+.nav-menu.open {
+  /*ハンバーガー押下してopen付与したらY軸0% & opacity1で不透明で上からフェードイン出現*/
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/*nav-menuホバー時動作*/
+.nav-menu li {
+  transition: 0.3s;
+}
+.nav-menu li:hover {
+  transform: scale(1.2);
+  border-bottom: solid 1px #fff;
+  /* 下線をテキストと同じ幅にあわせるために設定 */
+  display: inline-block;
+}
+
+/*-------------------------------------------
+ハンバーガーメニュー
+-------------------------------------------*/
+/*ハンバーガーメニュー通常示*/
+.hamburger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 22px;
+  right: 18px;
+  transition: 0.5s;
+  z-index: 40;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  /*線の色*/
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+}
+
+.hamburger span:nth-child(1) {
+  /*バーガー線1本目*/
+  top: 4px;
+}
+
+.hamburger span:nth-child(2) {
+  /*2本目*/
+  top: 14px;
+}
+
+.hamburger span:nth-child(3) {
+  /*3本目*/
+  bottom: 4px;
+}
+
+/*ハンバーガーメニュー押下=open時*/
+.open.hamburger span {
+  background-color: #fff;
+}
+
+.open.hamburger span:nth-child(1) {
+  /*バーガー線1本目回転アニメーション*/
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open.hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.open.hamburger span:nth-child(3) {
+  /*バーガー線3本目回転アニメーション*/
+  transform: translateY(-10px) rotate(315deg);
+}
+
+/*-------------------------------------------
+メインビジュアル
+-------------------------------------------*/
+.main-visual-list {
+  display: flex;
+  justify-content: center;
+}
+
+.main-visual-list img {
+  width: calc(100%/3);
+  /*画像3枚がイイ感じに見える幅*/
+  height: 100vh;
+  flex-shrink: 0;
+  /*jQueryによる画像拡大時に縮まない(大きく拡大する)用*/
+  object-fit: cover;
+  /*アスペクト比維持したまま要素のボックス全体配置*/
+}
+
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+.information {
+  margin-bottom: 140px;
+}
+
+.information p {
+  line-height: 2em;
+  font-size: 1.2rem;
+}
+
+/*-------------------------------------------
+サイドボタン デフォルトデザイン
+-------------------------------------------*/
+.side-btn {
+  border: solid 1px #fff;
+  position: fixed;
+  right: -144px;
+  bottom: 200px;
+  /*rotate-90degで縦回転「translateY(60px)」で横に隠す(回転してるからy軸で横)*/
+  /*表示非表示制御はjsで実施*/
+  transform: rotate(-90deg) translateY(60px);
+  transition: 0.6s;
+  z-index: 30;
+}
+
+.side-btn a {
+  width: 165px;
+  font-size: 0.875rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding: 15px 0;
+  transition: 0.3s;
+}
+
+.side-btn a:last-of-type {
+  border-left: solid 1px #fff;
+}
+
+.side-btn a:hover {
+  opacity: 0.7;
+}
+
+/*-------------------------------------------
+products
+-------------------------------------------*/
+.products {
+  margin-bottom: 280px;
+}
+
+.products-list li {
+  margin-bottom: 60px;
+}
+
+.products-list li img {
+  width: 48%;
+  border-radius: 80%;
+  box-shadow: 1px 1px 30px 3px #d3c5c5;
+  position: relative;
+  transition: 0.3s;
+}
+
+.products-list li img:hover {
+  transform: scale(1.2);
+}
+
+.products-list li .name {
+  color: #fff;
+  font-size: 1.75rem;
+  /*親liに対する位置をabsolute(bottom,left,z-index)で指定*/
+  z-index: 1;
+  /*z-indexは多分1以上で画像上に表示*/
+}
+
+
+/* 奇数のliタグは左寄せ */
+.products-list li:nth-child(odd) {
+  text-align: left;
+}
+
+/* 奇数(左)のli .nameポジション */
+.products-list li:nth-child(odd) .name {
+  position: absolute;
+  bottom: 4px;
+  left: 7px;
+}
+
+/* 偶数のliタグは右寄せ */
+.products-list li:nth-child(even) {
+  text-align: right;
+}
+
+/* 偶数(右)のli .nameポジション */
+.products-list li:nth-child(even) .name {
+  position: absolute;
+  bottom: 4px;
+  right: 1px;
+}
+
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+.access {
+  margin-bottom: 480px;
+}
+
+/*Accessを見てるときだけ表示する背景temp-bg
+「position: fixed;」で固定し「width: 100vw;」「height: 100vh;」で全画面表示*/
+.temp-bg {
+  background: url("../img/bgR1.jpg") center center repeat !important;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  /*初期状態は「display: none;」で非表示。jsで表示/非表示制御*/
+  z-index: -10;
+}
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+.contact {
+  margin-bottom: 200px;
+}
+
+/*コンタクトフォーム*/
+/*以下dl,dt,dd定義で「ラベルと入力フィールドを横並びに配置」を実現*/
+/*dlでflex,wrapしつつdt,dlの幅が合計100%になるよう設定*/
+.contact dl {
+  display: flex;
+  /* dt、ddを横並びにする */
+  flex-wrap: wrap;
+  /* dtとddが100%になったら、横並びを折り返す */
+  margin-bottom: 20px;
+}
+
+.contact dt {
+  width: 15%;
+}
+
+.contact dd {
+  width: 85%;
+  margin-bottom: 10px;
+}
+
+.contact dd input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: solid 1px #c8c8c8;
+  box-sizing: border-box;
+  /*はみ出し防止*/
+}
+
+.contact dd textarea {
+  height: 160px;
+  /*高さを広めにしたいので調整*/
+  padding: 15px;
+}
+
+.contact .button {
+  text-align: center;
+}
+
+.contact .button input {
+  width: 150px;
+  background-color: #24292e;
+  color: #fff;
+  padding: 15px 0;
+  transition: 0.3s;
+}
+
+.contact .button input:hover {
+  background: #fff;
+  color: #24292e;
+}
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: solid 1px #fff;
+  font-size: 0.8rem;
+  padding: 80px 30px;
+  text-align: left;
+  line-height: 2em;
+}
+
+.footer-sns-list {
+  display: flex;
+  margin-top: 20px;
+}
+
+.footer-sns-list li {
+  margin-right: 20px;
+}
+
+#footer .copyright {
+  display: flex;
+  align-items: center;
+}
+
+/*-------------------------------------------
+レスポンシブ SP対応
+-------------------------------------------*/
+/*ブレークポイントは900px*/
+@media screen and (max-width: 900px) {
+
+  /*各種フォントサイズ縮小*/
+  .site-title {
+    font-size: 2.4rem;
+  }
+
+  .sec-title {
+    font-size: 1.5rem;
+  }
+
+  .sub-title {
+    font-size: 1.1rem;
+  }
+
+
+  /*logo画像は縮小*/
+  .logo-image {
+    width: 100px;
+  }
+
+  .information p,
+  .access p {
+    line-height: 1.6em;
+    font-size: 0.9rem;
+  }
+
+  /*サイドボタンは非表示*/
+  .side-btn {
+    display: none;
+  }
+
+  /*ギャラリー画像はサイズを若干拡大*/
+  .products-list li img {
+    max-width: 90%;
+  }
+
+
+  /*iframe google map は幅を縮小*/
+  .access iframe {
+    max-width: 90%;
+  }
+
+  /*contactボタンサイズとパディング調整*/
+  .contact button {
+    width: 90%;
+    padding: 30px 5px;
+    font-size: 0.9rem;
+  }
+
+  /*contactフォーム調整*/
+  .contact dl {
+    flex-direction: column;
+  }
+
+  .contact dt {
+    width: 100%;
+  }
+
+  .contact dd {
+    width: 100%;
+  }
+
+
+  /*フッターはflex要素縦積み&左寄せ*/
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+
+}

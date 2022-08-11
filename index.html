@@ -1,0 +1,205 @@
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/faviconR1.ico">
+    <title>pfEyeglassesLPWeb</title>
+    <!--Google Fonts の「Source Sans Pro」用(以下3行)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <!--FontAwesome CDN import-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 自作cssインポート -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--ヘッダー-->
+    <header class="header">
+        <!--ロゴ-->
+        <a href="#" target="_blank" rel="noopener noreferrer"><img class="logo-image" src="img/logo.png" alt="logo"></a>
+
+        <!--ナビゲーションメニュー-->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">TOP</a></li>
+                <li><a href="#information">INFORMATION</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#access">ACCESS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!--ハンバーガーメニュー-->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <!--TOPセクション,メインビジュアル-->
+            <section id="main-visual-list" class="main-visual-list">
+                <img src="img/mainvisual1R1.jpg" alt="mvjpg">
+                <img src="img/mainvisual2R1.jpg" alt="mvjpg">
+                <img src="img/mainvisual3R1.jpg" style="object-position: 20% 50%;" alt="mvjpg">
+                <!--表示位置調整-->
+            </section>
+
+            <!--大テキスト:サイトタイトル-->
+            <h1 class="site-title scroll-reveal">
+                夏のセール実施中!!<br>
+                最大30% OFF!!
+            </h1>
+
+            <!--informationセクション-->
+            <section id="information" class="information">
+                <h2 class="sec-title">INFORMATION</h2>
+                <h3 class="sub-title">セール開催期間</h3>
+                <p>202x/07/01 - 202x/08/31</p>
+                <h3 class="sub-title">対象商品</h3>
+                <p>全品</p>
+                <h3 class="sub-title">同時開催キャンペーン</h3>
+                <p> <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i>
+                        twitter</a>フォローでさらに10% OFF</p>
+            </section>
+
+            <!--productsセクション-->
+            <section id="products" class="products wrapper">
+                <h2 class="sec-title scroll-reveal">PRODUCTS</h2>
+                <ul class="products-list">
+                    <li class="scroll-reveal">
+                        <img src="/img/products1.jpg" alt="jpg">
+                        <p class="name">MEN</p>
+                    </li>
+                    <li class="scroll-reveal">
+                        <img src="/img/products2.jpg" alt="jpg">
+                        <p class="name">WOMEN</p>
+                    </li>
+                    <li class="scroll-reveal">
+                        <img src="/img/products3.jpg" alt="jpg">
+                        <p class="name">KIDS</p>
+                    </li>
+                    <li class="scroll-reveal">
+                        <img src="/img/products4.jpg" alt="jpg">
+                        <p class="name">ELDERLY</p>
+                    </li>
+                    <li class="scroll-reveal">
+                        <img src="/img/products5.jpg" alt="jpg">
+                        <p class="name">SUNGLASSES</p>
+                    </li>
+                    <li class="scroll-reveal">
+                        <img src="/img/products6.jpg" alt="jpg">
+                        <p class="name">BUSINESS</p>
+                    </li>
+                </ul>
+
+                <!--サイドボタン-->
+                <div class="side-btn">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>
+                        instagram</a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i>
+                        facebook</a>
+                </div>
+
+            </section>
+
+            <!--accessセクション-->
+            <section id="access" class="access">
+                <h2 class="sec-title scroll-reveal">ACCESS</h2>
+                <p class="scroll-reveal">東京都武蔵野市吉祥寺南町（東京）</p>
+                <br>
+                <div class="scroll-reveal">
+                    <!--google map埋め込み-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.93778934007!2d139.5776200155324!3d35.70314848018922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee47f6226cc3%3A0x34e6b69989d52a4e!2z5ZCJ56Wl5a-66aeF!5e0!3m2!1sja!2sjp!4v1659931320040!5m2!1sja!2sjp"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <!--accessセクション見てる時だけ背景用-->
+                <div class="temp-bg"></div>
+
+            </section>
+
+            <!--contactセクション-->
+            <section id="contact" class="contact wrapper">
+                <h2 class="sec-title scroll-reveal">CONTACT</h2>
+                <!-- contactフォーム-->
+                <form class="scroll-reveal" action="#contact" method="post">
+                    <dl>
+                        <dt>
+                            <label for="name">NAME</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="name" name="name">
+                        </dd>
+                        <dt>
+                            <label for="email">E-mail</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="email" name="email">
+                        </dd>
+                        <dt>
+                            <label for="message">MESSAGE</label>
+                        </dt>
+                        <dd>
+                            <textarea id="message" name="message"></textarea>
+                        </dd>
+                    </dl>
+                    <div class="button">
+                        <input type="submit" value="送信">
+                    </div>
+                </form>
+            </section>
+
+        </main>
+
+        <!--フッター-->
+        <footer class="footer">
+            <div>
+                <ul>
+                    <li><i class="fa-brands fa-github"></i>  github:<a href="https://github.com/JiyuBorg" target="_blank"> JiyuBorg</a></li>
+                    <li>Images: <a href="https://pixabay.com/" target="_blank">  Pixabay</a></li>
+                    <li>Fonts: <a href="https://fontawesome.com/" target="_blank">  Font Awesome</a></li>
+                    </li>
+                </ul>
+
+                <ul class="footer-sns-list">
+
+                    <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i> twitter</a>
+                    </li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i>
+                            facebook</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>
+                            instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                <a href="#">PRIVACY POLICY</a>
+                <p>このサイト内容は架空のものであり、実在の人物・団体等とは関係ございません。</p>
+                <p>Copyright © Jiyuborg All Rights Reserved.</p>
+            </div>
+
+        </footer>
+    </div>
+
+    <!-- jQuery minified CDNインポート -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- scrollreveal.js CDNインポート-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- スクラッチjsインポート-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
