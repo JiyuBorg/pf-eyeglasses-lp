@@ -203,6 +203,8 @@ header
 .main-visual-list {
   display: flex;
   justify-content: center;
+  /* はみ出し防止 */
+  overflow: hidden;
 }
 
 .main-visual-list img {

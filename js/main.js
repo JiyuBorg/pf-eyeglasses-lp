@@ -116,7 +116,7 @@ https://nakox.jp/web/coding/js_animetion_scrollreveal
  ===================================================*/
 //ベースの設定
 ScrollReveal({
-  reset: true, //フレームインの度に動かすか否か(boolean)
+  reset: false, //フレームインの度に動かすか否か(boolean)
   delay: 100, //アニメーション開始までの時間ms
   duration: 1500, //アニメーション完了にかかる時間ms
   origin: "bottom", //アニメーションの開始方向top,bottom,left,right
